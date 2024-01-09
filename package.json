@@ -4,11 +4,7 @@
 	"description": "Sort the keys of an object",
 	"license": "MIT",
 	"repository": "btea/sort-keys-depth",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "https://sindresorhus.com"
-	},
+	"author": "https://github.com/btea",
 	"type": "module",
 	"exports": "./index.js",
 	"engines": {
