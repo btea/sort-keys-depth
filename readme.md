@@ -49,7 +49,7 @@ Type: `object`
 
 ##### deep
 
-Type: `boolean`\
+Type: `boolean | number`
 Default: `false`
 
 Recursively sort keys, including keys of objects inside arrays.
