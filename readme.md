@@ -1,4 +1,4 @@
-# sort-keys
+# sort-keys-depth
 
 > Sort the keys of an object
 
@@ -7,13 +7,13 @@ Useful to get a deterministically ordered object, as the order of keys can vary 
 ## Install
 
 ```
-$ npm install sort-keys
+$ npm install sort-keys-depth
 ```
 
 ## Usage
 
 ```js
-import sortKeys from 'sort-keys';
+import sortKeys from 'sort-keys-depth';
 
 sortKeys({c: 0, a: 0, b: 0});
 //=> {a: 0, b: 0, c: 0}
