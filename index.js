@@ -5,11 +5,21 @@ export default function sortKeys(object, options = {}) {
 		throw new TypeError('Expected a plain object or array');
 	}
 
-	const {deep, compare} = options;
+	let {deep} = options;
+	const isNumber = typeof deep === 'number';
+	const {compare} = options;
 	const seenInput = [];
 	const seenOutput = [];
 
 	const deepSortArray = array => {
+		if (isNumber && deep !== Number.POSITIVE_INFINITY) {
+			if (deep <= 0) {
+				return array;
+			}
+
+			deep--;
+		}
+
 		const seenIndex = seenInput.indexOf(array);
 		if (seenIndex !== -1) {
 			return seenOutput[seenIndex];
@@ -35,6 +45,14 @@ export default function sortKeys(object, options = {}) {
 	};
 
 	const _sortKeys = object => {
+		if (isNumber && deep !== Number.POSITIVE_INFINITY) {
+			if (deep <= 0) {
+				return object;
+			}
+
+			deep--;
+		}
+
 		const seenIndex = seenInput.indexOf(object);
 		if (seenIndex !== -1) {
 			return seenOutput[seenIndex];
